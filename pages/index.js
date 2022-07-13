@@ -52,7 +52,7 @@ export default function Home({ propertyForSale, propertyForRent}) {
   )
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
     const propertyForSale = await fetchApi(`${baseUrl}/properties/list?locationExternalIDs=5002&purpose=for-sale&hitsPerPage=6`)
     const propertyForRent = await fetchApi(`${baseUrl}/properties/list?locationExternalIDs=5002&purpose=for-rent&hitsPerPage=6`)
 
