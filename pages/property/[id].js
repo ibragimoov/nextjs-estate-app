@@ -15,18 +15,18 @@ const PropertyDetails = ({ propertyDetails: { price, rentFrequency, rooms, title
         <Flex paddingTop='2' alignItems='center'>
             <Box paddingRight='3' color='green.400'>{isVerified && <GoVerified />}</Box>
             <Text fontWeight='bold' fontSize='lg'>
-            USD {price} {rentFrequency && `/${rentFrequency}`}
+            AED {price} {rentFrequency && `/${rentFrequency}`}
             </Text>
             <Spacer />
             <Avatar size='sm' src={agency?.logo?.url}></Avatar>
         </Flex>
         <Flex alignItems='center' p='1' justifyContent='space-between' w='250px' color='blue.400'>
-            {rooms}<FaBed /> | {baths} <FaBath /> | {millify(area)} m² <BsGridFill />
+            {rooms}<FaBed /> | {baths} <FaBath /> | {millify(area)} sqft <BsGridFill />
         </Flex>
         </Box>
         <Box marginTop='2'>
         <Text fontSize='lg' marginBottom='2' fontWeight='bold'>{title}</Text>
-        <Text lineHeight='2' color='gray.600'>{description.length > 500 ? description.substring(0, 150) : description}</Text>
+        <Text lineHeight='2' color='gray.600'>{description}</Text>
         </Box>
         <Flex flexWrap='wrap' textTransform='uppercase' justifyContent='space-between'>
         <Flex justifyContent='space-between' w='400px' borderBottom='1px' borderColor='gray.100' p='3'>

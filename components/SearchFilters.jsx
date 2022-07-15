@@ -33,18 +33,18 @@ export default function SearchFilters() {
 
     useEffect(() => {
         if (searchTerm !== '') {
-            const fetchData = async () => {
-                setLoading(true);
-                const data = await fetchApi(`${baseUrl}/auto-complete?query=${searchTerm}`);
-                setLoading(false);
-                setLocationData(data?.hits);
-            };
+        const fetchData = async () => {
+            setLoading(true);
+            const data = await fetchApi(`${baseUrl}/auto-complete?query=${searchTerm}`);
+            setLoading(false);
+            setLocationData(data?.hits);
+        };
 
-            fetchData();
+        fetchData();
         }
     }, [searchTerm]);
 
-    return (
+  return (
         <Flex bg='gray.100' p='4' justifyContent='center' flexWrap='wrap'>
         {filters?.map((filter) => (
             <Box key={filter.queryName}>
@@ -83,7 +83,7 @@ export default function SearchFilters() {
                 )}
                 {loading && <Spinner margin='auto' marginTop='3' />}
                 {showLocations && (
-                <Box height='220px' overflow='auto'>
+                <Box height='300px' overflow='auto'>
                     {locationData?.map((location) => (
                     <Box
                         key={location.id}
@@ -100,7 +100,7 @@ export default function SearchFilters() {
                     ))}
                     {!loading && !locationData?.length && (
                     <Flex justifyContent='center' alignItems='center' flexDir='column' marginTop='5' marginBottom='5' >
-                        <Image src={noresult} alt="noresult"/>
+                        <Image src={noresult} />
                         <Text fontSize='xl' marginTop='3'>
                         Waiting to search!
                         </Text>
