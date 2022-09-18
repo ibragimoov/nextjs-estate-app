@@ -1,4 +1,4 @@
-# React Pizza: 🏠
+# React EstateApp: 🏠
 
 ## [Live Link: 🔗](https://ibragimoov-pizza.vercel.app/)
 
